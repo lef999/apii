@@ -2,25 +2,25 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const UserList = () => {
-  // Define the state variables once
+  // Define V
   const [listOfUsers, setListOfUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch the user data once when the component mounts
+  // Fetch 
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
-        setListOfUsers(response.data); // Save data to state
-        setLoading(false); // Set loading to false once data is fetched
+        setListOfUsers(response.data); 
+        setLoading(false); 
       })
       .catch((error) => {
         console.error("Error fetching the user data", error);
-        setError("There was an issue fetching the user data"); // Set error message
-        setLoading(false); // Set loading to false even on error
+        setError("There was an issue fetching the user data"); 
+        setLoading(false); 
       });
-  }, []); // Empty array means this effect runs only once after the component mounts
+  }, []); 
 
   return (
     <div style={{ textAlign: "center" }}>
